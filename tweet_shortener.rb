@@ -14,7 +14,7 @@ end
 def word_substituter(tweet)
   array = tweet.split.collect do |word|
     if dictionary.keys.any? {|w| w.to_s == word}
-      word = dictionary[word.to_sym].values
+      word = dictionary[:word].values
     else word
     end
   end
