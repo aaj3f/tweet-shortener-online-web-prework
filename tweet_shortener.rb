@@ -12,8 +12,11 @@ def dictionary
 end
 
 def word_substituter(tweet)
-  tweet.split
-
-  tweet.join(" ")
+  array = tweet.split.collect do |word|
+    if dictionary.keys.any? {|w| w.to_s == word}
+      word = dictionary[word.to_sym].values
+    else word
+    end
+  end
+  array.join(" ")
 end
-    
