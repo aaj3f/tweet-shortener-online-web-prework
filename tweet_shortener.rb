@@ -14,7 +14,7 @@ end
 def word_substituter(tweet)
   array = tweet.split.collect do |word|
     if dictionary.keys.any? {|w| w == word}
-      word = dictionary[word].values
+      word = dictionary[word]
     else word
     end
   end
